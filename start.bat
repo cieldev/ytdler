@@ -33,8 +33,8 @@ set /p id="Enter video url: "
 echo.
 youtube-dl -F %id%
 echo.
-set /p qua="Select video quality: "
-youtube-dl -f %qua% -o %dir%\%%(title)s.%%(ext)s %id%
+set /p qua="elect video+audio quality: "
+youtube-dl "-f %qua%" --merge-output-format mp4 -o %dir%\%%(title)s.%%(ext)s %id%
 echo.
 pause
 cd ..
