@@ -34,7 +34,7 @@ echo.
 yt-dlp -F %id%
 echo.
 set /p qua="elect video+audio quality: "
-yt-dlp "-f %qua%" --merge-output-format mp4 -o %dir%\%%(title)s.%%(ext)s %id%
+yt-dlp "-f %qua%" --merge-output-format mp4 --embed-thumbnail -o %dir%\%%(title)s.%%(ext)s %id%
 echo.
 pause
 cd ..
@@ -46,8 +46,8 @@ goto start
 cd ..
 cd System
 set /p id="Enter video url: "
-yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --youtube-skip-dash-manifest -o Download\%%(title)s.%%(ext)s %id%
-yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --youtube-skip-dash-manifest -o %dir%\%%(title)s.%%(ext)s %id%
+yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --embed-thumbnail --youtube-skip-dash-manifest -o Download\%%(title)s.%%(ext)s %id%
+yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --embed-thumbnail --youtube-skip-dash-manifest -o %dir%\%%(title)s.%%(ext)s %id%
 pause
 cd ..
 goto start
@@ -56,7 +56,7 @@ goto start
 cd ..
 cd System
 set /p id="Enter video url: "
-yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --youtube-skip-dash-manifest -o %dir%\%%(title)s.%%(ext)s %id%
+yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --embed-thumbnail --youtube-skip-dash-manifest -o %dir%\%%(title)s.%%(ext)s %id%
 pause
 cd ..
 goto start
