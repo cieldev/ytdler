@@ -17,15 +17,21 @@ echo Extract .zip file...
 powershell Expand-Archive -Path master.zip -DestinationPath tmp/ -Force
 
 ::moved
-echo Checking...
+echo Adapting update...
 echo update.bat > ignorelist
 xcopy /S /E /F /Q /G /R /K /Y /V .\tmp\%rep_name%-master\* %~dp0 /EXCLUDE:ignorelist
 
 ::filedelete
-echo finishing Update...
+echo Deleting temporary files
 del master.zip
 del ignorelist
 rmdir /s /q tmp\
 
-echo Update finish.
+echo Updating yt-dlp
+cd system
+yt-dlp -U
+
+echo -------------------------------------
+echo  Successful update!
+echo -------------------------------------
 pause
