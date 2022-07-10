@@ -28,7 +28,7 @@ goto start1
 
 :mp4
 cd ..
-cd System
+cd Core
 set /p id="Enter video url: "
 echo.
 yt-dlp -F %id%
@@ -44,7 +44,7 @@ goto start
 
 :start2
 cd ..
-cd System
+cd Core
 set /p id="Enter video url: "
 yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --console-title --no-mtime --youtube-skip-dash-manifest -o Download\%%(title)s.%%(ext)s %id%
 yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --console-title --no-mtime --youtube-skip-dash-manifest -o %dir%\%%(title)s.%%(ext)s %id%
@@ -54,7 +54,7 @@ goto start
 
 :start1
 cd ..
-cd System
+cd Core
 set /p id="Enter video url: "
 yt-dlp --extract-audio --audio-format "mp3" --audio-quality 0 --console-title --no-mtime --youtube-skip-dash-manifest -o %dir%\%%(title)s.%%(ext)s %id%
 pause

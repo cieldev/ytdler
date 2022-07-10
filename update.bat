@@ -28,7 +28,7 @@ del ignorelist
 rmdir /s /q tmp\
 
 echo Updating yt-dlp
-cd system
+cd Core
 yt-dlp -U
 
 echo -------------------------------------
