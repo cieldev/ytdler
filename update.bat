@@ -1,3 +1,4 @@
+ame
 
 @echo off
 cd /d %~dp0
@@ -10,19 +11,19 @@ echo  %rep_name% update program
 echo -------------------------------------
 ::Download
 echo Download start.bat
-curl -L -O -# https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/start.bat > start.bat
+curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/start.bat"
 echo Downloading config.bat
-curl -L -O -# https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/config.bat > config.bat
+curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/config.bat"
 echo Downloading update.bat
-curl -L -O -# https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/update.bat > update.bat
+curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/update.bat"
 echo Downloading Core file
 
 cd Core
 
-curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/Core/yt-dlp.exe"
-curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/Core/ffmpeg.exe"
-curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/Core/ffplay.exe"
-curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/Core/ffprobe.exe"
+curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/yt-dlp.exe"
+curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/ffmpeg.exe"
+curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/ffplay.exe"
+curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/ffprobe.exe"
 
 echo Updating yt-dlp
 cd Core
