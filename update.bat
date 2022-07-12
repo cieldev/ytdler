@@ -4,19 +4,23 @@ echo -------------------------------------
 echo  ytdler update program
 echo -------------------------------------
 ::Download
-echo Download start.bat
-curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/start.bat"
-echo Downloading config.bat
-curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/config.bat"
-echo Downloading update.bat
-curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/update.bat"
+echo Downloading lastest version…
+curl -L -O -# "https://github.com/cieldev/ytdler/archive/master.zip"
 
-echo Downloading Core file
-cd Core
-curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/yt-dlp.exe"
-curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/ffmpeg.exe"
-curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/ffplay.exe"
-curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/ffprobe.exe"
+::Unzip
+echo Extract zip file...
+powershell Expand-Archive -Path master.zip -DestinationPath tmp/ -Force
+
+::moved
+echo Rewriting file
+echo update.bat > ignorelist
+xcopy /S /E /F /Q /G /R /K /Y /V .\tmp\%rep_name%-master\* %~dp0 /EXCLUDE:ignorelist
+
+::filedelete
+echo 一時ファイルを削除します
+del master.zip
+del ignorelist
+rmdir /s /q tmp\
 
 echo Updating yt-dlp
 cd Core
