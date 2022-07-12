@@ -4,7 +4,7 @@ echo -------------------------------------
 echo  ytdler update program
 echo -------------------------------------
 ::Download
-echo Downloading lastest version…
+echo Downloading lastest version...
 curl -L -O -# "https://github.com/cieldev/ytdler/archive/master.zip"
 
 ::Unzip
