@@ -1,13 +1,7 @@
-ame
-
 @echo off
 cd /d %~dp0
-::repository user
-set rep_user=cieldev
-::repository name
-set rep_name=ytdler
 echo -------------------------------------
-echo  %rep_name% update program
+echo  ytdler update program
 echo -------------------------------------
 ::Download
 echo Download start.bat
@@ -16,10 +10,9 @@ echo Downloading config.bat
 curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/config.bat"
 echo Downloading update.bat
 curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/update.bat"
+
 echo Downloading Core file
-
 cd Core
-
 curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/yt-dlp.exe"
 curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/ffmpeg.exe"
 curl -L -O -# "https://raw.githubusercontent.com/cieldev/ytdler/master/Core/ffplay.exe"
