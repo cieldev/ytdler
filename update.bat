@@ -16,22 +16,13 @@ curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/co
 echo Downloading update.bat
 curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/update.bat" > updata.bat
 echo Downloading Core file
+
 cd Core
+
 curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/Core/yt-dlp.exe"
 curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/Core/ffmpeg.exe"
 curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/Core/ffplay.exe"
 curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/Core/ffprobe.exe"
-
-::moved
-echo Adapting update...
-echo update.bat > ignorelist
-xcopy /S /E /F /Q /G /R /K /Y /V .\tmp\%rep_name%-master\* %~dp0 /EXCLUDE:ignorelist
-
-::filedelete
-echo Deleting temporary files
-del master.zip
-del ignorelist
-rmdir /s /q tmp\
 
 echo Updating yt-dlp
 cd Core
