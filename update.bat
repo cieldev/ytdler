@@ -10,11 +10,11 @@ echo  %rep_name% update program
 echo -------------------------------------
 ::Download
 echo Download start.bat
-curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/start.bat"  > start.bat
+curl -L -O -# https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/start.bat > start.bat
 echo Downloading config.bat
-curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/config.bat" > config.bat
+curl -L -O -# https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/config.bat > config.bat
 echo Downloading update.bat
-curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/update.bat" > updata.bat
+curl -L -O -# https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/update.bat > update.bat
 echo Downloading Core file
 
 cd Core
