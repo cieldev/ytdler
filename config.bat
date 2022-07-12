@@ -11,46 +11,7 @@ IF [%dir1%] == [] goto Dirend
 echo %Dir1%>DirToSave.txt
 :Dirend
 echo.
-goto DC
-
-
-
-
-:DC
-for /f "tokens=* delims=" %%x in (DownloadCopy.txt) do set dow=%%x
-if %dow%==Y goto DCy
-if %dow%==y goto DCy
-goto DCn
-
-:DCy
-set /p dow1=Want to make a copy of the downloaded file in the folder: "System/Download" [Y/n]: 
-echo.
-IF [%dow1%] == [] goto DCend
-IF [%dow1%] == [y] goto DCset
-IF [%dow1%] == [Y] goto DCset
-IF [%dow1%] == [N] goto DCset
-IF [%dow1%] == [n] goto DCset
-goto ErrSetDC
-goto DCend
-:DCn
-set /p dow1=Want to make a copy of the downloaded file in the folder: "System/Download" [y/N]: 
-echo.
-IF [%dow1%] == [] goto DCend
-IF [%dow1%] == [y] goto DCset
-IF [%dow1%] == [Y] goto DCset
-IF [%dow1%] == [N] goto DCset
-IF [%dow1%] == [n] goto DCset
-goto ErrSetDC
-goto DCend
-:DCset
-echo %dow1%> DownloadCopy.txt
-:DCend
-echo.
 goto MP
-
-
-
-
 
 :MP
 for /f "tokens=* delims=" %%x in (Mp3_OR_Mp4.txt) do set mp=%%x

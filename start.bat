@@ -7,10 +7,6 @@ echo.
 cd Config
 for /f "tokens=* delims=" %%x in (DirToSave.txt) do set dir=%%x
 if %dir%== goto errset
-for /f "tokens=* delims=" %%x in (DownloadCopy.txt) do set dow=%%x
-if %dow%==Y goto start2
-if %dow%==y goto start2
-if %dow%=="" goto errset
 for /f "tokens=* delims=" %%x in (Mp3_OR_Mp4.txt) do set mp=%%x
 if %mp%==mp4 goto mp4
 if %mp%==Mp4 goto mp4

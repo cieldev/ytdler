@@ -14,10 +14,10 @@ powershell Expand-Archive -Path master.zip -DestinationPath tmp/ -Force
 ::moved
 echo Rewriting file
 echo update.bat > ignorelist
-xcopy /S /E /F /Q /G /R /K /Y /V .\tmp\%rep_name%-master\* %~dp0 /EXCLUDE:ignorelist
+xcopy /S /E /F /Q /G /R /K /Y /V .\tmp\ytdler-master\* %~dp0 /EXCLUDE:ignorelist
 
 ::filedelete
-echo 一時ファイルを削除します
+echo Deleting temp file
 del master.zip
 del ignorelist
 rmdir /s /q tmp\
