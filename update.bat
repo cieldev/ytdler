@@ -20,6 +20,7 @@ xcopy /S /E /F /Q /G /R /K /Y /V .\tmp\ytdler-master\* %~dp0 /EXCLUDE:ignorelist
 echo Deleting temp file
 del master.zip
 del ignorelist
+del setup.bat
 rmdir /s /q tmp\
 
 echo Updating yt-dlp
