@@ -9,7 +9,6 @@ echo -------------------------------------
 echo  %rep_name% update program
 echo -------------------------------------
 ::Download
-<<<<<<< HEAD
 echo Download start.bat
 curl -L -O -# "https://raw.githubusercontent.com/%rep_user%/%rep_name%/master/start.bat"  > start.bat
 echo Downloading config.bat
